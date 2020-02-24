@@ -1,0 +1,163 @@
+﻿@model BlogMvcApp.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="container body-content">
+
+
+    <h2>@Model.Baslik</h2>
+    <hr />
+
+    <p>
+        <span class="glyphicon glyphicon-time"></span>
+        @Model.EklemeTarihi
+    </p>
+    <hr />
+    <img class="img-responsive" src="http://placehold.it/900x300" alt="" />
+    <hr />
+    <blockquote>
+        <p>@Model.Aciklama</p>
+    </blockquote>
+    <p>@Model.Icerik</p>
+
+    @*Yorum Satırı*@
+    <div class="comment">
+        <div class="well">
+            <h4>Yorum Satırı:</h4>
+            <form role="form">
+                <div class="form-group">
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Gönder</button>
+            </form>
+        </div>
+        <hr />
+
+        <div class="media">
+            <svg class="bd-placeholder-img mr-3" width="64" height="64" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">64x64</text></svg>
+            <div class="media-body">
+                <h5 class="mt-0">Media heading</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+@section SagKolon
+{
+    <div class="well">
+        <h4> Blog Search</h4>
+        <div class="input-group">
+            <input type="text" class="form-control" />
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+
+    @{
+        Html.RenderAction("KategoriListesi", "Category");
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div>
+        <h4>Blog</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Category.KategoriAdi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category.KategoriAdi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Baslik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Baslik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Aciklama)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Resim)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Resim)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Icerik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Icerik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EklemeTarihi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EklemeTarihi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Onay)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Onay)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AnaSayfa)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AnaSayfa)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
